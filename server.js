@@ -5,8 +5,8 @@ const { parseOperands } = require("./utils");
 const app = express();
 
 app.get("/add", (req, res) => {
-    const {x, y} = req.query;
-    const sum = parseInt(x) + parseInt(y);
+    const {x, y} = parseOperands(req);
+    const sum = add(x, y);
     res.send(200, sum);
 });
 
